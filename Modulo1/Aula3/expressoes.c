@@ -20,5 +20,6 @@ int main(void){
     //aprovado?
     bool resultado;
     printf("Aprovado? %d", resultado = (media >= 6.0 && (nota1 >= 3 && nota2 >= 3 && nota3 >= 3)));
-
+    
+    return 0;
 }
