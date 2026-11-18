@@ -6,6 +6,23 @@ int main(void){
     int fevereiro = 0; //...fevereiro
     int bissexto = 0; //variavel que guarda se um ano é bissexto ou não
     int ano = 0, mes = 0, dia = 0;//variaveis que guardam a data inserida
+
+    printf("Insira a data no formato 00/00/0000: ");
+    if(scanf(" %d/%d/%d", &dia, &mes, &ano) != 3){
+        printf("Entrada invalida");
+        return 1;
+    }
+
+    if(dia < 1 || dia > 31){
+        printf("Dia incorreto");
+        return 1;
+    }else if(mes < 1 || mes > 12){
+        printf("Mes incorreto");
+        return 1;
+    }else if(ano < 1 || ano > 9999){
+        printf("Ano invalido");
+        return 1;
+    }
     
     //verifica se o ano é bissexto ou não
     bissexto = ano % 4 == 0 && (!(ano % 100 == 0) || ano % 400 == 0);
@@ -16,86 +33,96 @@ int main(void){
         fevereiro = 28;
     }
 
-    if(mes <= 0){
-        printf("Mes invalido, o valor inserido e menor que 1 (um)");
-
-    }else if(mes == 1){
+    if(mes == 1){
         if(dia >= 1 && dia <= JANEIRO){
-            printf("Data valida (%d/%d/%d)", dia, mes, ano);
+            printf("Data valida (%d/%d/%04d)", dia, mes, ano);
         }else{
             printf("Data invalida, dia fora dos dias do mes");
+            return 1;
         }
-
     }else if(mes == 2){
         if(dia >= 1 && dia <= fevereiro){
-            printf("Data valida (%d/%d/%d)", dia, mes, ano);
+            printf("Data valida (%d/%d/%04d)", dia, mes, ano);
+        }else if(fevereiro == 28 && dia == 29){
+            printf("Data invalida, Fevereiro de %d teve 28 dias por ser um ano bissexto", ano);
+            return 1;
         }else{
             printf("Data invalida, dia fora dos dias do mes");
+            return 1;
         }
     }else if(mes == 3){
         if(dia >= 1 && dia <= MARCO){
-            printf("Data valida (%d/%d/%d)", dia, mes, ano);
+            printf("Data valida (%d/%d/%04d)", dia, mes, ano);
         }else{
             printf("Data invalida, dia fora dos dias do mes");
+            return 1;
         }
     }else if(mes == 4){
         if(dia >= 1 && dia <= ABRIL){
-            printf("Data valida (%d/%d/%d)", dia, mes, ano);
+            printf("Data valida (%d/%d/%04d)", dia, mes, ano);
         }else{
             printf("Data invalida, dia fora dos dias do mes");
+            return 1;
         }
     }else if(mes == 5){
         if(dia >= 1 && dia <= MAIO){
-            printf("Data valida (%d/%d/%d)", dia, mes, ano);
+            printf("Data valida (%d/%d/%04d)", dia, mes, ano);
         }else{
             printf("Data invalida, dia fora dos dias do mes");
+            return 1;
         }
     }else if(mes == 6){
         if(dia >= 1 && dia <= JUNHO){
-            printf("Data valida (%d/%d/%d)", dia, mes, ano);
+            printf("Data valida (%d/%d/%04d)", dia, mes, ano);
         }else{
             printf("Data invalida, dia fora dos dias do mes");
+            return 1;
         }
     }else if(mes == 7){
         if(dia >= 1 && dia <= JULHO){
-            printf("Data valida (%d/%d/%d)", dia, mes, ano);
+            printf("Data valida (%d/%d/%04d)", dia, mes, ano);
         }else{
             printf("Data invalida, dia fora dos dias do mes");
+            return 1;
         }
     }else if(mes == 8){
         if(dia >= 1 && dia <= AGOSTO){
-            printf("Data valida (%d/%d/%d)", dia, mes, ano);
+            printf("Data valida (%d/%d/%04d)", dia, mes, ano);
         }else{
             printf("Data invalida, dia fora dos dias do mes");
+            return 1;
         }
     }else if(mes == 9){
         if(dia >= 1 && dia <= SETEMBRO){
-            printf("Data valida (%d/%d/%d)", dia, mes, ano);
+            printf("Data valida (%d/%d/%04d)", dia, mes, ano);
         }else{
             printf("Data invalida, dia fora dos dias do mes");
+            return 1;
         }
     }else if(mes == 10){
         if(dia >= 1 && dia <= OUTUBRO){
-            printf("Data valida (%d/%d/%d)", dia, mes, ano);
+            printf("Data valida (%d/%d/%04d)", dia, mes, ano);
         }else{
             printf("Data invalida, dia fora dos dias do mes");
+            return 1;
         }
     }else if(mes == 11){
         if(dia >= 1 && dia <= NOVEMBRO){
-            printf("Data valida (%d/%d/%d)", dia, mes, ano);
+            printf("Data valida (%d/%d/%04d)", dia, mes, ano);
         }else{
             printf("Data invalida, dia fora dos dias do mes");
+            return 1;
         }
     }else if(mes == 12){
         if(dia >= 1 && dia <= DEZEMBRO){
-            printf("Data valida (%d/%d/%d)", dia, mes, ano);
+            printf("Data valida (%d/%d/%04d)", dia, mes, ano);
         }else{
             printf("Data invalida, dia fora dos dias do mes");
+            return 1;
         }
     }else{
-
+        printf("Mes nao identificado");
+        return 1;
     }
-
-
     return 0;
 }
