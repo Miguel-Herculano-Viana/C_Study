@@ -10,6 +10,8 @@ int main(void){
     //media de notas
     double nota1 = 7, nota2 = 8, nota3 = 8;
     double media = (nota1 + nota2 + nota3) / 3;
+    double nota4 = -7, nota5 = 8, nota6 = 8;
+    double media2 = (nota4 + nota5 + nota6) / 3;
 
     printf("A media e: %.2lf\n\n", media);
 
@@ -19,7 +21,8 @@ int main(void){
 
     //aprovado?
     bool resultado;
-    printf("Aprovado? %d", resultado = (media >= 6.0 && (nota1 >= 3 && nota2 >= 3 && nota3 >= 3)));
+    printf("Aprovado? %d\n", resultado = (media >= 6.0 && (nota1 >= 3 && nota2 >= 3 && nota3 >= 3)));
+    printf("Aprovado? %d\n", resultado = (media2 >= 6.0 && (nota4 >= 3 && nota5 >= 3 && nota6 >= 3)));
     
     return 0;
 }

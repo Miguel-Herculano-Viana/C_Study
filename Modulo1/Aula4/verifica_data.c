@@ -44,7 +44,7 @@ int main(void){
         if(dia >= 1 && dia <= fevereiro){
             printf("Data valida (%d/%d/%04d)", dia, mes, ano);
         }else if(fevereiro == 28 && dia == 29){
-            printf("Data invalida, Fevereiro de %d teve 28 dias por ser um ano bissexto", ano);
+            printf("Data invalida, Fevereiro de %d teve 28 dias por nao ser um ano bissexto", ano);
             return 1;
         }else{
             printf("Data invalida, dia fora dos dias do mes");

@@ -1,16 +1,16 @@
 #include <stdio.h>
 
 int main(void){
-    int nota1 = 0;
-    int nota2 = 0;
-    int nota3 = 0;
-    int reprovado = 0;
+    double nota1 = 0;
+    double nota2 = 0;
+    double nota3 = 0;
+    double reprovado = 0;
     double media = 0.00;
 
     printf("Boletim Interativo\n");
 
     printf("Insira a primeira nota: ");
-    if(scanf("%d", &nota1) == 0){
+    if(scanf("%d", &nota1) != 1){
         printf("Entrada invalida");
         return 1;
     }
@@ -18,7 +18,7 @@ int main(void){
         printf("Nota fora do range (0 - 10)");
         return 1;
     }
-    if(nota1 <= 3){
+    if(nota1 < 3){
         reprovado = 1;
     }
 
@@ -56,10 +56,10 @@ int main(void){
         printf("Sua nota foi A, com uma media de %.2f", media);
     }else if(media >= 7){
         printf("Sua nota foi B, com uma media de %.2f", media);
-    }else if(media >= 6){
+    }else if(media <= 6){
         printf("Sua nota foi C, com uma media de %.2f", media);
     }else{
-        printf("Reprovado por media abaixo da media (menor que 3)");
+        printf("Reprovado por media abaixo da media (menor que 6)");
     }
     return 0;
 }
