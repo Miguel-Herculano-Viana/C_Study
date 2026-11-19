@@ -10,7 +10,7 @@ int main(void){
     printf("Boletim Interativo\n");
 
     printf("Insira a primeira nota: ");
-    if(scanf("%d", &nota1) != 1){
+    if(scanf(" %lf", &nota1) != 1){
         printf("Entrada invalida");
         return 1;
     }
@@ -18,12 +18,9 @@ int main(void){
         printf("Nota fora do range (0 - 10)");
         return 1;
     }
-    if(nota1 < 3){
-        reprovado = 1;
-    }
 
     printf("Insira a segunda nota: ");
-    if(scanf("%d", &nota2) == 0){
+    if(scanf(" %lf", &nota2) != 1){
         printf("Entrada invalida");
         return 1;
     }
@@ -31,21 +28,15 @@ int main(void){
         printf("Nota fora do range (0 - 10)");
         return 1;
     }
-    if(nota2 <= 3){
-        reprovado = 1;
-    }
 
     printf("Insira a terceira nota: ");
-    if(scanf("%d", &nota3) == 0){
+    if(scanf(" %lf", &nota3) != 1){
         printf("Entrada invalida");
         return 1;
     }
     if(nota3 < 0 || nota3 > 10){
         printf("Nota fora do range (0 - 10)");
         return 1;
-    }
-    if(nota3 <= 3){
-        reprovado = 1;
     }
 
     media = (nota1 + nota2 + nota3) / 3;
@@ -56,7 +47,7 @@ int main(void){
         printf("Sua nota foi A, com uma media de %.2f", media);
     }else if(media >= 7){
         printf("Sua nota foi B, com uma media de %.2f", media);
-    }else if(media <= 6){
+    }else if(media >= 6){
         printf("Sua nota foi C, com uma media de %.2f", media);
     }else{
         printf("Reprovado por media abaixo da media (menor que 6)");
