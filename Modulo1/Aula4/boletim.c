@@ -18,7 +18,6 @@ int main(void){
         printf("Nota fora do range (0 - 10)");
         return 1;
     }
-
     printf("Insira a segunda nota: ");
     if(scanf(" %lf", &nota2) != 1){
         printf("Entrada invalida");
@@ -38,7 +37,10 @@ int main(void){
         printf("Nota fora do range (0 - 10)");
         return 1;
     }
-
+    if(nota1 < 3 || nota2 <3 || nota3 <3){
+        reprovado = 1;
+    }
+    
     media = (nota1 + nota2 + nota3) / 3;
 
     if(reprovado == 1){
