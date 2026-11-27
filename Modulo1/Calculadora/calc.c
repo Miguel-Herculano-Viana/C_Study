@@ -39,11 +39,6 @@ int main(){
         printf("Entrada invalida: Operador Desconhecido\n");
         return 1;
     }
-    if(res > -1e9 && res < 1e9){
-        printf("%.2lf %c %.2lf = %.2lf\n", num1, operator, num2, res);
-    }else{
-        printf("Erro: Resultado fora do range\n");
-        return 2;
-    }
+    printf("%.2lf %c %.2lf = %.2lf\n", num1, operator, num2, res);
     return 0;
 }
